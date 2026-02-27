@@ -8,12 +8,12 @@ export const HomeCard = () => {
             bg='#0F172A' 
             color='white'
             >
-            <IMenu text='Geral'/>
-            <IMenu text='Clientes'/>
-            <IMenu text='Produtos'/>
-            <IMenu text='Geral'/>
-            <IMenu text='Geral'/>
-            <IMenu text='Geral'/> 
+            <IMenu text='Geral' value="teste"/>
+            <IMenu text='Clientes' value="teste"/>
+            <IMenu text='Produtos' value="teste"/>
+            <IMenu text='Geral' value="teste"/>
+            <IMenu text='Geral' value="teste"/>
+            <IMenu text='Geral' value="teste"/> 
         </Flex>       
         /*<Flex
             as="section"

@@ -18,6 +18,11 @@ interface HeaderProps {
 
 interface MenuProps {
     text: string
+    value?: string
 }
 
-export type { InputProps, ButtonProps, HeaderProps, MenuProps }
+interface MenuItemProps {
+    value: string
+}
+
+export type { InputProps, ButtonProps, HeaderProps, MenuProps, MenuItemProps }

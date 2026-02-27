@@ -15,8 +15,8 @@ export const IMenu = (props: MenuProps) => {
         <Menu.Positioner>
           <Menu.Content>
             <Menu.ItemGroup>
-              <Menu.Item value="bold">Bold</Menu.Item>
-              <Menu.Item value="underline">Underline</Menu.Item>
+              <Menu.Item value="bold">{props.value}</Menu.Item>
+              <Menu.Item value="underline">{props.value}</Menu.Item>
               <Menu.Item value="left">Left</Menu.Item>
               <Menu.Item value="middle">Middle</Menu.Item>
               <Menu.Item value="right">Right</Menu.Item>
