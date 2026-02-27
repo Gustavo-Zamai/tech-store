@@ -3,13 +3,17 @@ import { IMenu } from "../Menu/Menu"
 
 export const HomeCard = () => {
     return (
-        <Flex w='100%' bg='#0F172A' color='white'>
-        <IMenu text='Geral'/>
-        <IMenu text='Clientes'/>
-        <IMenu text='Produtos'/>
-        <IMenu text='Geral'/>
-        <IMenu text='Geral'/>
-        <IMenu text='Geral'/> 
+        <Flex 
+            w='100%' 
+            bg='#0F172A' 
+            color='white'
+            >
+            <IMenu text='Geral'/>
+            <IMenu text='Clientes'/>
+            <IMenu text='Produtos'/>
+            <IMenu text='Geral'/>
+            <IMenu text='Geral'/>
+            <IMenu text='Geral'/> 
         </Flex>       
         /*<Flex
             as="section"
