@@ -9,7 +9,7 @@ export const HomeCard = () => {
         w="100%"
         h="80vh"
         direction="column"
-        bgImage={`linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${background})`}
+        bgImage={`url(${background})`}
         bgRepeat="no-repeat"
         bgSize="cover"
         bgPos="center"

@@ -68,7 +68,7 @@ export const Header = ({ showMenu }: HeaderProps) => {
               bg="#3B82F6"
               size="sm"
               _hover={{ bg: "#1D4ED8" }}
-              onClick={() => handleLogoutClick("/")}
+              onClick={() => handleLogoutClick("/login")}
             >
               Sair
             </Button>

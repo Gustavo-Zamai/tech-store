@@ -10,7 +10,8 @@ export const Footer = () => {
         fontSize='sm' 
         fontFamily='Arial sans-serif' 
         position='fixed' bottom={0} left={0} 
-        textAlign='center'>
+        textAlign='center'
+        padding='0.75rem 0px'>
             <Text>&copy; {new Date().getFullYear()} Tech Store. All rights reserved.</Text>
             <Text><p style={{flexWrap:'wrap'}}>Desenvolvido por <strong>Gustavo Simão Zamai</strong></p></Text>
         </Box>
