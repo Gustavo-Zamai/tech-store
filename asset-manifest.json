@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/tech-store/static/js/main.141d1651.js",
+    "static/js/453.ee767c89.chunk.js": "/tech-store/static/js/453.ee767c89.chunk.js",
+    "static/media/logo.png": "/tech-store/static/media/logo.d441ee1593a21dd285c6.png",
+    "static/media/background-santo-brilho.png": "/tech-store/static/media/background-santo-brilho.89c66f18bc60509bdee5.png",
+    "index.html": "/tech-store/index.html",
+    "static/media/avatar.svg": "/tech-store/static/media/avatar.9fbe207878b576610c89cd54ba310607.svg",
+    "main.141d1651.js.map": "/tech-store/static/js/main.141d1651.js.map",
+    "453.ee767c89.chunk.js.map": "/tech-store/static/js/453.ee767c89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.141d1651.js"
+  ]
+}
