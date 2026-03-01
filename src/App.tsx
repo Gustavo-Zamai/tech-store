@@ -1,7 +1,9 @@
 import React from 'react';
 import { Login } from './pages/Login/Login';
 import { Home } from './pages/Home/Home';
-import { Clientes } from './pages/Clientes/Clientes'
+import  ClientsListPage  from './pages/Clientes/ClientsListPage'
+import NewClientPage from './pages/Clientes/NewClientPage';
+import EditClientPage from './pages/Clientes/EditClientPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -10,7 +12,9 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/clientes' element={<Clientes />} />
+        <Route path="/clientes" element={<ClientsListPage />} />
+        <Route path="/clientes/novo" element={<NewClientPage />} />
+        <Route path="/clientes/:id" element={<EditClientPage />} />
       </Routes>
     </BrowserRouter>
   );

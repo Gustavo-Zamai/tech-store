@@ -16,7 +16,7 @@ export const IMenu = ({ text, onClick }: MenuProps) => {
             w='80%'
             borderRadius='10px'
             onClick={onClick}
-            _hover={{bg:'#334155'}}
+            _hover={{bg:'#000000'}}
           >
             {text}
           </Button>
