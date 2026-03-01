@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.89ce3a26.js",
-    "static/js/453.ee767c89.chunk.js": "/static/js/453.ee767c89.chunk.js",
-    "static/media/logo.png": "/static/media/logo.d441ee1593a21dd285c6.png",
-    "static/media/background-santo-brilho.png": "/static/media/background-santo-brilho.89c66f18bc60509bdee5.png",
-    "index.html": "/index.html",
-    "static/media/avatar.svg": "/static/media/avatar.9fbe207878b576610c89cd54ba310607.svg",
-    "main.89ce3a26.js.map": "/static/js/main.89ce3a26.js.map",
-    "453.ee767c89.chunk.js.map": "/static/js/453.ee767c89.chunk.js.map"
+    "main.js": "/login/static/js/main.f34a5f90.js",
+    "static/js/453.ee767c89.chunk.js": "/login/static/js/453.ee767c89.chunk.js",
+    "static/media/logo.png": "/login/static/media/logo.d441ee1593a21dd285c6.png",
+    "static/media/background-santo-brilho.png": "/login/static/media/background-santo-brilho.89c66f18bc60509bdee5.png",
+    "index.html": "/login/index.html",
+    "static/media/avatar.svg": "/login/static/media/avatar.9fbe207878b576610c89cd54ba310607.svg",
+    "main.f34a5f90.js.map": "/login/static/js/main.f34a5f90.js.map",
+    "453.ee767c89.chunk.js.map": "/login/static/js/453.ee767c89.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.89ce3a26.js"
+    "static/js/main.f34a5f90.js"
   ]
 }
