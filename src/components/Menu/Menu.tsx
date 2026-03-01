@@ -11,8 +11,6 @@ export const IMenu = ({ text, onClick }: MenuProps) => {
         width: "100%",
       }}
     >
-      <Menu.Root>
-        <Menu.Trigger asChild>
           <Button
             variant="solid"
             w='80%'
@@ -22,8 +20,6 @@ export const IMenu = ({ text, onClick }: MenuProps) => {
           >
             {text}
           </Button>
-        </Menu.Trigger>
-      </Menu.Root>
     </div>
   );
 };

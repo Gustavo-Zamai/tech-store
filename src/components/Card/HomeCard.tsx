@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import background from "../../assets/background.png";
+import background from "../../assets/background-santo-brilho.png";
 
 export const HomeCard = () => {
   return (
