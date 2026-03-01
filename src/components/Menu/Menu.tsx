@@ -1,31 +1,29 @@
-import { Button, Menu, Portal } from "@chakra-ui/react"
-import { MenuProps } from "../../utils/utils"
+import { Button, Menu } from "@chakra-ui/react";
+import { MenuProps } from "../../utils/utils";
 
-
-export const IMenu = (props: MenuProps) => {
+export const IMenu = ({ text, onClick }: MenuProps) => {
   return (
-    <div 
-        style={{ backgroundColor: '#1E293B', padding: '0.5rem 2rem', borderTop: '1px solid #334155', width:'100%' }}
+    <div
+      style={{
+        backgroundColor: "#1E293B",
+        padding: "0.5rem 2rem",
+        borderTop: "1px solid #334155",
+        width: "100%",
+      }}
     >
-    <Menu.Root>
-      <Menu.Trigger>
-        <Button variant="solid">{props.text}</Button>
-      </Menu.Trigger>
-      <Portal>
-        <Menu.Positioner>
-          <Menu.Content>
-            <Menu.ItemGroup>
-              <Menu.Item value="bold">{props.value}</Menu.Item>
-              <Menu.Item value="underline">{props.value}</Menu.Item>
-              <Menu.Item value="left">Left</Menu.Item>
-              <Menu.Item value="middle">Middle</Menu.Item>
-              <Menu.Item value="right">Right</Menu.Item>
-            </Menu.ItemGroup>
-          </Menu.Content>
-        </Menu.Positioner>
-      </Portal>
-    </Menu.Root>
+      <Menu.Root>
+        <Menu.Trigger asChild>
+          <Button
+            variant="solid"
+            w='80%'
+            borderRadius='10px'
+            onClick={onClick}
+            _hover={{bg:'#334155'}}
+          >
+            {text}
+          </Button>
+        </Menu.Trigger>
+      </Menu.Root>
     </div>
-
-  )
-}
+  );
+};

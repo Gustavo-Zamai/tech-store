@@ -18,11 +18,8 @@ interface HeaderProps {
 
 interface MenuProps {
     text: string
-    value?: string
+    onClick: () => void
 }
 
-interface MenuItemProps {
-    value: string
-}
 
-export type { InputProps, ButtonProps, HeaderProps, MenuProps, MenuItemProps }
+export type { InputProps, ButtonProps, HeaderProps, MenuProps }
