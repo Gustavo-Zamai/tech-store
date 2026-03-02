@@ -1,46 +1,209 @@
-# Getting Started with Create React App
+# 🛒 TechStore --- Web Modernization of a Java Swing Desktop System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A full architectural reinterpretation of a legacy Java Swing desktop
+> retail management system, rebuilt as a modular and scalable web
+> application using React and TypeScript.
 
-## Available Scripts
+------------------------------------------------------------------------
 
-In the project directory, you can run:
+## 📌 Overview
 
-### `npm start`
+**TechStore** is a web-based retail management system designed as a
+modernization of a previously developed desktop application built with
+Java + Swing.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project simulates a real-world legacy system migration scenario,
+focusing on:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-   Architectural restructuring
+-   Domain-driven organization
+-   Frontend scalability
+-   Business-process modeling
+-   Separation of concerns
 
-### `npm test`
+The goal was not just to recreate the UI --- but to redesign the system
+with modern engineering principles.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+------------------------------------------------------------------------
 
-### `npm run build`
+## 🏗 Project Architecture
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application follows a **domain-based modular structure**, separating
+concerns into independent business areas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    src/
+     ├── components/      # Reusable UI components
+     ├── pages/           # Domain modules (Clients, Sales, Login, Home)
+     ├── services/        # Business services (authentication)
+     ├── utils/           # Utility functions
+     ├── assets/          # Static resources
+     └── App.tsx          # Application root
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📦 Domain Modules
 
-### `npm run eject`
+    pages/
+     ├── Clients/
+     ├── Sales/
+     ├── Login/
+     └── Home/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Each domain contains its own pages and types, promoting scalability and
+maintainability.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+------------------------------------------------------------------------
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🧠 Domain Modeling
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The system was redesigned with relational modeling principles in mind:
 
-## Learn More
+    Client 1:N Sale
+    Sale 1:N SaleItem
+    SaleItem N:1 Product
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Even though the current implementation uses mock data, the architecture
+is prepared for backend integration using REST APIs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+------------------------------------------------------------------------
+
+## 🚀 Tech Stack
+
+### 🌐 Web Version
+
+-   React
+-   TypeScript
+-   React Router
+-   Component-based architecture
+-   Modular folder structure
+
+### 🖥 Original Desktop Version
+
+-   Java
+-   Swing
+-   JDBC
+-   Relational database
+
+------------------------------------------------------------------------
+
+## 🎯 Implemented Features
+
+### 🔐 Authentication
+
+-   Login page
+-   Login service abstraction
+-   Logout service
+-   Session handling structure prepared
+
+### 👥 Clients Module
+
+-   Clients listing page
+-   Create new client page
+-   Edit client page
+-   Modular type definitions
+-   Dedicated routing
+
+### 💰 Sales Module
+
+-   New sale creation
+-   Multi-item sales logic
+-   Automatic total calculation
+-   Sales listing page
+-   Payment method handling structure
+
+### 🏠 Home & Layout
+
+-   Layout abstraction
+-   Header & Footer components
+-   Navigation menu
+-   Reusable Card components
+-   Custom Button & Input components
+
+------------------------------------------------------------------------
+
+## 🔄 Desktop → Web Modernization Strategy
+
+This project demonstrates:
+
+-   Migration from monolithic desktop UI to modular web architecture
+-   Decoupling UI from business logic
+-   Transition from event-driven Swing components to declarative React
+    architecture
+-   Refactoring UI flows into reusable components
+-   Preparing for REST-based backend communication
+
+This is a practical example of legacy system evolution.
+
+------------------------------------------------------------------------
+
+## 🖥 Sales Business Flow
+
+1.  Select client\
+2.  Add products with quantity\
+3.  Automatic subtotal and total calculation\
+4.  Define payment method\
+5.  Finalize sale
+
+> The frontend performs calculations for user experience, but final
+> validation is designed to be handled by the backend in future
+> integration (security best practice).
+
+------------------------------------------------------------------------
+
+## 🛠 How to Run the Project
+
+``` bash
+git clone https://github.com/your-username/techstore.git
+cd techstore
+npm install
+npm start
+```
+
+------------------------------------------------------------------------
+
+## 📈 Future Improvements (Engineering Roadmap)
+
+-   Backend integration (Spring Boot)
+-   Database persistence
+-   Stock management
+-   Authentication tokens (JWT)
+-   Authorization roles
+-   Pagination & filtering
+-   Sales dashboard with metrics
+-   Production deployment
+
+------------------------------------------------------------------------
+
+## 🧪 Architectural Considerations
+
+### Scalability
+
+The modular domain-based structure allows independent evolution of: -
+Clients - Sales - Products - Authentication
+
+### Maintainability
+
+Component-level separation and dedicated service layers reduce coupling.
+
+### Security
+
+The structure anticipates: - Server-side validation - Token-based
+authentication - Protected routes
+
+------------------------------------------------------------------------
+
+## 🎓 Engineering Goals
+
+This project was built to:
+
+-   Simulate real-world system modernization
+-   Strengthen fullstack architectural skills
+-   Apply scalable frontend design
+-   Build a portfolio-level professional system
+-   Demonstrate capability beyond simple CRUD applications
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+**Gus Simons**\
+Software Developer (Fullstack Transition)\
+Focused on Software Engineering, Architecture & Scalable Systems
