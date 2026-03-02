@@ -1,5 +1,5 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import { HeaderProps } from "../../utils/utils";
+import { Box, Button, Center, Flex, Image, Text } from "@chakra-ui/react";
+import { HeaderProps } from "../../types/utils";
 import logo from "../../assets/logo.png";
 import avatar from "../../assets/avatar.svg";
 import { useNavigate } from "react-router-dom";
@@ -49,6 +49,9 @@ export const Header = ({ showMenu }: HeaderProps) => {
             Tech Store
           </Text>
         </Flex>
+        <Center>
+          {showMenu && <Text fontSize="4xl" fontWeight='bold'>Santo Brilho</Text>} {/**TODO Substituir pelo nome da empresa diretamente da API */}
+        </Center>
         {/* Faixa do Menu com avatar, saudação e botão de logout */}
         <Flex align="center" gap={4}>
           {showMenu && (

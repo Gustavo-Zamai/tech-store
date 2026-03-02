@@ -1,5 +1,5 @@
-import { Button, Menu } from "@chakra-ui/react";
-import { MenuProps } from "../../utils/utils";
+import { Button } from "@chakra-ui/react";
+import { MenuProps } from "../../types/utils";
 
 export const IMenu = ({ text, onClick }: MenuProps) => {
   return (

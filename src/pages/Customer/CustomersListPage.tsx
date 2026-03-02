@@ -14,23 +14,23 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../../components/Layout/Layout";
 import { useState } from "react";
-import { Client } from "./types";
+import { Customer } from "../../types/types";
 
-export default function ClientsListPage() {
+export default function CustomersListPage() {
   const navigate = useNavigate();
 
- /* const client = [
+  const client = [
     { id: "1", name: "João", email: "joao@email.com" },
     { id: "2", name: "Maria", email: "maria@email.com" },
-  ];*/
+  ];
 
-  const [client, setClients] = useState<Client[]> ([]);
+  const [customer, setCustomer] = useState<Customer[]> ([]);
   const [search, setSearch] = useState("");
   const [selectedClient, setSelectedClient] = useState (null);
 
-    const filteredClients = client.filter((c) =>
+  /*  const filteredClients = customer.filter((c) =>
     c.name.toLowerCase().includes(search.toLowerCase())
-  );
+  );*/
 
   return (
     <ChakraProvider value={defaultSystem}>
@@ -40,7 +40,7 @@ export default function ClientsListPage() {
 
         <HStack mb={4}>
           <Input 
-            value={search}
+            
             onChange={(e) => setSearch(e.target.value)}
             border='1px solid black'
             borderRadius='10px'
@@ -57,9 +57,9 @@ export default function ClientsListPage() {
         </HStack>
 
         <VStack align="stretch">
-          {client.map((client) => (
+          {customer.map((customer) => (
             <Grid
-              key={client.id}
+              key={customer.id}
               templateColumns="1fr 1fr auto"
               p={4}
               borderWidth="1px"
@@ -68,8 +68,8 @@ export default function ClientsListPage() {
               border='1px solid black'
             >
               <GridItem>
-                <Text fontWeight="bold">{client.name}</Text>
-                <Text fontSize="sm">{client.email}</Text>
+                <Text fontWeight="bold">{customer.name}</Text>
+                <Text fontSize="sm">{customer.email}</Text>
               </GridItem>
 
               <GridItem />
@@ -82,7 +82,7 @@ export default function ClientsListPage() {
                     border="1px solid black"
                     _hover={{ bgColor: "blue" }}
                     size="sm"
-                    onClick={() => navigate(`/clientes/${client.id}`)}
+                    onClick={() => navigate(`/clientes/${customer.id}`)}
                   >
                     Editar
                   </Button>

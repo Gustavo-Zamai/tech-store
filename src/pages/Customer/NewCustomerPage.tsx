@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Layout } from "../../components/Layout/Layout";
 
-export default function NewClientPage() {
+export default function NewCustomerPage() {
   const navigate = useNavigate();
 
   const [name, setName] = useState("");

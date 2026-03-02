@@ -1,5 +1,5 @@
 import { Box, Center, Input} from "@chakra-ui/react";
-import { InputProps } from "../../utils/utils";
+import { InputProps } from "../../types/utils";
 
 
 export const InputCard = (props: InputProps) => {

@@ -11,7 +11,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Layout } from "../../components/Layout/Layout";
 
-export default function EditClientPage() {
+export default function EditCustomerPage() {
   const { id } = useParams();
   const navigate = useNavigate();
 

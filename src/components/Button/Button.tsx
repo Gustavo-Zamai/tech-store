@@ -2,7 +2,7 @@ import { Button,
         Box, 
         Center } 
     from "@chakra-ui/react";
-import { ButtonProps } from "../../utils/utils";
+import { ButtonProps } from "../../types/utils";
 
 export const IButton = (props: ButtonProps) => {
     return (

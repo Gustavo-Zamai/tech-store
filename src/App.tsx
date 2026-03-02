@@ -1,9 +1,9 @@
 import React from 'react';
 import { Login } from './pages/Login/Login';
 import { Home } from './pages/Home/Home';
-import  ClientsListPage  from './pages/Clientes/ClientsListPage'
-import NewClientPage from './pages/Clientes/NewClientPage';
-import EditClientPage from './pages/Clientes/EditClientPage';
+import  ClientsListPage  from './pages/Customer/CustomersListPage'
+import NewClientPage from './pages/Customer/NewCustomerPage';
+import EditClientPage from './pages/Customer/EditCustomerPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
