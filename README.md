@@ -202,8 +202,14 @@ This project was built to:
 
 ------------------------------------------------------------------------
 
+## Legacy Version
+
+The original desktop version of this system was built using Java Swing.
+Repository available at:
+https://github.com/Gustavo-Zamai/tech-store-desktop
+
 ## 👨‍💻 Author
 
-**Gus Simons**\
+**Gus Simão Zamai**\
 Software Developer (Fullstack Transition)\
 Focused on Software Engineering, Architecture & Scalable Systems
