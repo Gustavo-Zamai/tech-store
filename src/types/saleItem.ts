@@ -1,4 +1,4 @@
 export interface SaleItem {
-  productId: string;
+  productId: number;
   quantity: number;
 }

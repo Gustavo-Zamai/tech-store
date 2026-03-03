@@ -13,7 +13,6 @@ interface ButtonProps {
 
 interface HeaderProps {
   showMenu?: boolean; // Prop para decidir se mostra o menu ou não
-  menuContent?: React.ReactNode; // Slot para o conteúdo do menu
 }
 
 interface MenuProps {

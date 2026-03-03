@@ -1,9 +1,9 @@
 export interface Sale {
-  id: string
-  customerId: string
-  employeeId: string
+  id: number
+  customerId: number
+  employeeId: number
   items: {
-    productId: string
+    productId: number
     quantity: number
   }[]
   total: number
