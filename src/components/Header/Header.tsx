@@ -18,7 +18,7 @@ export const Header = ({ showMenu }: HeaderProps) => {
 
     // Adicionar mais menus conforme necessário
   const menus = [
-    { label: "Geral", route: "/" },
+    { label: "Geral", route: "/home" },
     { label: "Clientes", route: "/clientes" },
     { label: "Produtos", route: "/produtos" },
     { label: "Fornecedores", route: "/fornecedores"},

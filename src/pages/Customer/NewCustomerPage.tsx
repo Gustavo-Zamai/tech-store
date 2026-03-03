@@ -3,13 +3,11 @@ import {
   Heading,
   Input,
   Button,
-  VStack,
-  ChakraProvider,
-  defaultSystem,
+  VStack
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Layout } from "../../components/Layout/Layout";
+import { MainLayout } from "../../components/Layout/MainLayout";
 
 export default function NewCustomerPage() {
   const navigate = useNavigate();
@@ -18,13 +16,11 @@ export default function NewCustomerPage() {
   const [email, setEmail] = useState("");
 
   const handleSave = () => {
-    console.log({ name, email });
     navigate("/clientes");
   };
 
   return (
-    <ChakraProvider value={defaultSystem}>
-      <Layout showMenu={true} />
+    <MainLayout>
       <Box p={8} bgColor="lightGray" h="80vh">
         <Heading mb={6}>Novo Cliente</Heading>
 
@@ -55,6 +51,6 @@ export default function NewCustomerPage() {
           </Button>
         </VStack>
       </Box>
-    </ChakraProvider>
+    </MainLayout>
   );
 }

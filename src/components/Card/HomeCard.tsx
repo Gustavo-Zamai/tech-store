@@ -1,9 +1,10 @@
 import { Flex } from "@chakra-ui/react";
-import background from "../../assets/background-santo-brilho.png";
+import background from "../../assets/background.png";
+import { MainLayout } from "../Layout/MainLayout";
 
 export const HomeCard = () => {
   return (
-    <>
+    <MainLayout>
       <Flex
         as="section"
         w="100%"
@@ -14,6 +15,6 @@ export const HomeCard = () => {
         bgSize="cover"
         bgPos="center"
       />
-    </>
+    </MainLayout>
   );
 };

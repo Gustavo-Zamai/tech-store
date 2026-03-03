@@ -8,99 +8,89 @@ import {
   Text,
   Grid,
   GridItem,
-  ChakraProvider,
-  defaultSystem,
+  Spinner
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { Layout } from "../../components/Layout/Layout";
-import { useState } from "react";
-import { Customer } from "../../types/types";
+import { MainLayout } from "../../components/Layout/MainLayout";
+import { useCustomers } from "../../hooks/useClients";
 
 export default function CustomersListPage() {
   const navigate = useNavigate();
-
-  const client = [
-    { id: "1", name: "João", email: "joao@email.com" },
-    { id: "2", name: "Maria", email: "maria@email.com" },
-  ];
-
-  const [customer, setCustomer] = useState<Customer[]> ([]);
-  const [search, setSearch] = useState("");
-  const [selectedClient, setSelectedClient] = useState (null);
-
-  /*  const filteredClients = customer.filter((c) =>
-    c.name.toLowerCase().includes(search.toLowerCase())
-  );*/
+  const {
+    filteredCustomers,
+    loading,
+    search,
+    setSearch,
+    removeCustomer,
+  } = useCustomers();
 
   return (
-    <ChakraProvider value={defaultSystem}>
-      <Layout showMenu={true} />
-      <Box p={8} bgColor='lightGray' h='80vh'>
-        <Heading mb={6} >Clientes</Heading>
+    <MainLayout> 
+      <Box p={8} bgColor="gray.300">
+        <Heading mb={6}>Clientes</Heading>
 
         <HStack mb={4}>
-          <Input 
-            
+          <Input
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
-            border='1px solid black'
-            borderRadius='10px'
-            placeholder="Buscar cliente..." />
+            placeholder="Buscar cliente..."
+          />
+
           <Button
-            bgColor="darkGreen"
-            borderRadius="10px"
-            border="1px solid black"
-            _hover={{ bgColor: "green" }}
+            colorScheme="green"
             onClick={() => navigate("/clientes/novo")}
           >
             + Novo Cliente
           </Button>
         </HStack>
 
-        <VStack align="stretch">
-          {customer.map((customer) => (
-            <Grid
-              key={customer.id}
-              templateColumns="1fr 1fr auto"
-              p={4}
-              borderWidth="1px"
-              borderRadius="md"
-              alignItems="center"
-              border='1px solid black'
-            >
-              <GridItem>
-                <Text fontWeight="bold">{customer.name}</Text>
-                <Text fontSize="sm">{customer.email}</Text>
-              </GridItem>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <VStack align="stretch">
+            {filteredCustomers.map((customer) => (
+              <Grid
+                key={customer.id}
+                templateColumns="1fr auto"
+                p={4}
+                borderWidth="1px"
+                borderRadius="md"
+                alignItems="center"
+              >
+                <GridItem>
+                  <Text fontWeight="bold">{customer.name}</Text>
+                  <Text fontSize="sm">{customer.email}</Text>
+                  <Text fontSize="sm">{customer.cpf}</Text>
+                </GridItem>
 
-              <GridItem />
-
-              <GridItem>
-                <HStack>
-                  <Button
-                    bgColor="darkBlue"
-                    borderRadius="10px"
-                    border="1px solid black"
-                    _hover={{ bgColor: "blue" }}
-                    size="sm"
-                    onClick={() => navigate(`/clientes/${customer.id}`)}
-                  >
-                    Editar
-                  </Button>
-                  <Button 
-                    bgColor="darkRed"
-                    borderRadius="10px"
-                    border="1px solid black"
-                    _hover={{ bgColor: "red" }}
-                    size="sm" 
+                <GridItem>
+                  <HStack>
+                    <Button
+                      size="sm"
+                      colorScheme="blue"
+                      onClick={() =>
+                        navigate(`/clientes/${customer.id}`)
+                      }
                     >
-                    Excluir
-                  </Button>
-                </HStack>
-              </GridItem>
-            </Grid>
-          ))}
-        </VStack>
+                      Editar
+                    </Button>
+
+                    <Button
+                      size="sm"
+                      colorScheme="red"
+                      onClick={() =>
+                        removeCustomer(customer.id)
+                      }
+                    >
+                      Excluir
+                    </Button>
+                  </HStack>
+                </GridItem>
+              </Grid>
+            ))}
+          </VStack>
+        )}
       </Box>
-    </ChakraProvider>
+    </MainLayout>
   );
 }

@@ -4,69 +4,54 @@ import {
   Input,
   Button,
   VStack,
-  defaultSystem,
-  ChakraProvider
+  Spinner
 } from "@chakra-ui/react";
 import { useNavigate, useParams } from "react-router-dom";
+import { MainLayout } from "../../components/Layout/MainLayout";
+import { useCustomer } from "../../hooks/useClient";
 import { useState, useEffect } from "react";
-import { Layout } from "../../components/Layout/Layout";
 
 export default function EditCustomerPage() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const { customer, loading, saveCustomer } = useCustomer(Number(id!));
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [cpfCnpj, setCpfCnpj] = useState("");
+  const [cpf, setCpf] = useState("");
 
   useEffect(() => {
-    // Buscar pelo ID da API
-    setName("Cliente Exemplo");
-    setEmail("cliente@email.com");
-    setCpfCnpj("38884953855")
-  }, [id]);
+    if (customer) {
+      setName(customer.name);
+      setEmail(customer.email);
+      setCpf(customer.cpf);
+    }
+  }, [customer]);
 
-  const handleUpdate = () => {
-    console.log({ id, name, email });
+  const handleUpdate = async () => {
+    await saveCustomer();
+
     navigate("/clientes");
   };
 
+  if (loading) return <Spinner />;
+
   return (
-    <ChakraProvider value={defaultSystem}>
-        <Layout showMenu={true} />
-        <Box p={8} bgColor='lightGray' h='80vh'>
+    <MainLayout>
+      <Box p={8} bgColor="gray.100" minH="80vh">
         <Heading mb={6}>Editar Cliente</Heading>
 
-        <VStack>
-            <Input
-            border='1px solid black'
-            borderRadius='10px'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            />
-            <Input
-            border='1px solid black'
-            borderRadius='10px'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-            border='1px solid black'
-            borderRadius='10px'
-            value={cpfCnpj}
-            onChange={(e) => setName(e.target.value)}
-            />
+        <VStack gap={4}>
+          <Input value={name} onChange={(e) => setName(e.target.value)} />
+          <Input value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Input value={cpf} onChange={(e) => setCpf(e.target.value)} />
 
-            <Button 
-            bgColor='darkBlue'
-            border='1px solid black'
-            borderRadius='10px'
-            _hover={{bgColor:'blue'}}
-            onClick={handleUpdate}>
+          <Button colorScheme="blue" onClick={handleUpdate}>
             Atualizar
-            </Button>
+          </Button>
         </VStack>
-        </Box>
-    </ChakraProvider>
+      </Box>
+    </MainLayout>
   );
 }
