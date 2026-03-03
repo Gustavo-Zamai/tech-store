@@ -1,70 +1,168 @@
 {
   "customers": [
     {
-      "id": "c1",
-      "name": "João Silva",
-      "cpf": "12345678900",
-      "email": "joao@email.com"
-    },
-    {
-      "id": "c2",
-      "name": "Maria Souza",
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
       "cpf": "98765432100",
-      "email": "maria@email.com"
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },    {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+     {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },
+        {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
+    },    {
+      "id": "2",
+      "name": "Mariana Souza",
+      "email": "mariana@email.com",
+      "cpf": "98765432100",
+      "phone": "19888888888"
     }
   ],
   "employees": [
     {
-      "id": "e1",
+      "id": "1",
       "name": "Carlos Mendes",
       "role": "Vendedor"
     },
     {
-      "id": "e2",
+      "id": "2",
       "name": "Ana Lima",
       "role": "Gerente"
     }
   ],
   "products": [
     {
-      "id": "p1",
+      "id": "1",
       "name": "Notebook",
       "price": 3500
     },
     {
-      "id": "p2",
+      "id": "2",
       "name": "Mouse",
       "price": 80
     },
     {
-      "id": "p3",
+      "id": "3",
       "name": "Teclado",
       "price": 150
     }
   ],
   "suppliers": [
     {
-      "id": "s1",
+      "id": "1",
       "name": "Tech Distribuidora",
       "cnpj": "12345678000199"
     },
     {
-      "id": "s2",
+      "id": "2",
       "name": "InfoParts LTDA",
       "cnpj": "98765432000188"
     }
   ],
   "sales": [
     {
-      "id": "sale1",
-      "customerId": "c1",
+      "id": "1",
+      "customerId": 1,
       "items": [
         {
-          "productId": "p1",
+          "productId": 1,
           "quantity": 1
         },
         {
-          "productId": "p2",
+          "productId": 2,
           "quantity": 2
         }
       ],
@@ -73,11 +171,11 @@
       "paymentMethod": "Cartão de Crédito"
     },
     {
-      "id": "sale2",
-      "customerId": "c2",
+      "id": "2",
+      "customerId": 2,
       "items": [
         {
-          "productId": "p3",
+          "productId": 3,
           "quantity": 1
         }
       ],
@@ -85,5 +183,6 @@
       "date": "2026-03-02",
       "paymentMethod": "Pix"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
