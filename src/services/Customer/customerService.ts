@@ -11,12 +11,14 @@ export const getCustomerById = async (id: number): Promise<Customer> => {
   return response.data;
 };
 
-export const createCustomer = async (data: Customer) => {
-  return api.post("/customers", data);
+export const createCustomer = async (data: Omit<Customer, "id">) => {
+  const response = await api.post("/customers", data);
+  return response.data;
 };
 
 export const updateCustomer = async (id: number) => {
-  return api.put(`/customers/${id}`);
+  const response = await api.put(`/customers/${id}`)
+  return response.data;
 };
 
 export const deleteCustomer = async (id: number) => {

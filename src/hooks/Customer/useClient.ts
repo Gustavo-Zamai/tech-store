@@ -12,8 +12,8 @@ export const useCustomer = (id: number) => {
     setLoading(false);
   };
 
-  const saveCustomer = async (): Promise<Customer | any> => {
-    await updateCustomer(id);
+  const saveCustomer = async (id:number, data: Customer) => {
+    await updateCustomer(data.id, data);
   };
 
   useEffect(() => {

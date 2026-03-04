@@ -10,6 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { MainLayout } from "../../components/Layout/MainLayout";
 import { useCustomer } from "../../hooks/Customer/useClient";
 import { useState, useEffect } from "react";
+import { updateCustomer } from "../../services/Customer/customerService";
 
 export default function EditCustomerPage() {
   const { id } = useParams();
@@ -20,20 +21,28 @@ export default function EditCustomerPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [cpf, setCpf] = useState("");
+  const [phone, setPhone] = useState("");
 
   useEffect(() => {
     if (customer) {
       setName(customer.name);
       setEmail(customer.email);
       setCpf(customer.cpf);
+      setPhone(customer.phone);
     }
   }, [customer]);
 
-  const handleUpdate = async () => {
-    await saveCustomer();
+const handleUpdate = async () => {
+  await saveCustomer({
+    id: Number(id),
+    name,
+    email,
+    cpf,
+    phone
+  });
 
-    navigate("/clientes");
-  };
+  navigate("/clientes");
+};
 
   if (loading) return <Spinner />;
 
