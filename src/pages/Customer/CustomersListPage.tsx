@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { MainLayout } from "../../components/Layout/MainLayout";
-import { useCustomers } from "../../hooks/useClients";
+import { useCustomers } from "../../hooks/Customer/useClients";
 
 export default function CustomersListPage() {
   const navigate = useNavigate();

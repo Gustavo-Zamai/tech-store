@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getCustomerById, updateCustomer } from "../services/Customer/customerService";
-import { Customer } from "../types/customer";
+import { getCustomerById, updateCustomer } from "../../services/Customer/customerService";
+import { Customer } from "../../types/customer";
 
 export const useCustomer = (id: number) => {
   const [customer, setCustomer] = useState<Customer | null>(null);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Customer } from "../types/customer";
-import { getCustomers, deleteCustomer } from "../services/Customer/customerService";
+import { Customer } from "../../types/customer";
+import { getCustomers, deleteCustomer } from "../../services/Customer/customerService";
 
 export const useCustomers = () => {
   const [customers, setCustomers] = useState<Customer[]>([]);

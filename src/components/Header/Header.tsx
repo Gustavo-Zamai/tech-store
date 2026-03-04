@@ -4,6 +4,8 @@ import logo from "../../assets/logo.png";
 import avatar from "../../assets/avatar.svg";
 import { useNavigate } from "react-router-dom";
 import { IMenu } from "../Menu/Menu"
+import { useCompany } from "../../hooks/Company/useCompany";
+import { useEmployee } from "../../hooks/Employee/useEmployee";
 
 export const Header = ({ showMenu }: HeaderProps) => {
   const navigate = useNavigate();
@@ -16,6 +18,10 @@ export const Header = ({ showMenu }: HeaderProps) => {
     navigate(route);
   };
 
+  const { company } = useCompany();
+
+  const { employee } = useEmployee(2);
+  
     // Adicionar mais menus conforme necessário
   const menus = [
     { label: "Geral", route: "/home" },
@@ -50,13 +56,13 @@ export const Header = ({ showMenu }: HeaderProps) => {
           </Text>
         </Flex>
         <Center>
-          {showMenu && <Text fontSize="4xl" fontWeight='bold'>Santo Brilho</Text>} {/**TODO Substituir pelo nome da empresa diretamente da API */}
+          {showMenu && <Text fontSize="4xl" fontWeight='bold'>{`${company?.name}`}</Text>} {/**TODO Substituir pelo nome da empresa diretamente da API */}
         </Center>
         {/* Faixa do Menu com avatar, saudação e botão de logout */}
         <Flex align="center" gap={4}>
           {showMenu && (
             <Image
-              src={avatar}
+              src={employee?.avatar} /**Recebe imagem do usuário*/
               alt="User Avatar"
               w="40px"
               h="40px"
@@ -64,7 +70,7 @@ export const Header = ({ showMenu }: HeaderProps) => {
               marginLeft="1rem"
             />
           )}
-          {showMenu && <Text fontSize="sm">Bem Vindo, Usuário</Text>}{" "}
+          {showMenu && <Text fontSize="sm">Bem Vindo, {employee?.name}</Text>}{" "}
           {/* TODO Substituir "User" pelo nome real do usuário logado */}
           {showMenu && (
             <Button
@@ -81,7 +87,7 @@ export const Header = ({ showMenu }: HeaderProps) => {
 
       {/* Faixa do Menu (Só aparece se showMenu for true) */}
       {showMenu && (
-              <Flex w="100%" bg="#0F172A" color="white">
+        <Flex w="100%" bg="#0F172A" color="white">
         {menus.map((item) => (
           <IMenu
             key={item.label}

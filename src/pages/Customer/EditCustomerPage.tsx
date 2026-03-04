@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate, useParams } from "react-router-dom";
 import { MainLayout } from "../../components/Layout/MainLayout";
-import { useCustomer } from "../../hooks/useClient";
+import { useCustomer } from "../../hooks/Customer/useClient";
 import { useState, useEffect } from "react";
 
 export default function EditCustomerPage() {

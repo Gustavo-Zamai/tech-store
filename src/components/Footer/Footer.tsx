@@ -3,7 +3,7 @@ import { Box, Text } from "@chakra-ui/react";
 export const Footer = () => {
     return (
         <Box bg='#0F172A' 
-        minH='50px' 
+        minH='45px' 
         h='auto'
         w='100%' 
         color='white' 
