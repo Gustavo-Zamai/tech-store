@@ -52,16 +52,36 @@ const handleUpdate = async () => {
 
   return (
     <MainLayout>
-      <Box p={8} bgColor="gray.100" minH="80vh">
+      <Box p={8} mb={10} bgColor="gray.100" minH="80vh">
         <Heading mb={6}>Editar Cliente</Heading>
 
         <VStack gap={4}>
-          <Input value={name} onChange={(e) => setName(e.target.value)} />
-          <Input value={email} onChange={(e) => setEmail(e.target.value)} />
-          <Input value={cpf} onChange={(e) => setCpf(e.target.value)} />
-          <Input value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <Input 
+            value={name} 
+            onChange={(e) => setName(e.target.value)}
+            border="0.8px solid gray"
+          />
+          <Input 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}
+            border="0.8px solid gray"
+          />
+          <Input 
+            value={cpf} 
+            onChange={(e) => setCpf(e.target.value)}
+            border="0.8px solid gray"
+          />
+          <Input 
+            value={phone} 
+            onChange={(e) => setPhone(e.target.value)}
+            border="0.8px solid gray"
+          />
 
-          <Button colorScheme="blue" onClick={handleUpdate}>
+          <Button 
+           bgColor="blue"
+           _hover={{bgColor:"blue.700"}}
+           border="1px solid black"
+           onClick={handleUpdate}>
             Atualizar
           </Button>
         </VStack>

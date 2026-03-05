@@ -35,7 +35,7 @@ const handleSave = async () => {
 
   return (
     <MainLayout>
-      <Box p={8} bgColor="lightGray" h="80vh">
+      <Box p={8} mb={10} bgColor="gray.100" h="80vh">
         <Heading mb={6}>Novo Cliente</Heading>
 
         <VStack>
@@ -72,8 +72,8 @@ const handleSave = async () => {
           <Button
             border="1px solid black"
             borderRadius="10px"
-            bgColor="darkGreen"
-            _hover={{ bgColor: "green" }}
+            bgColor="green"
+            _hover={{ bgColor: "green.700" }}
             onClick={handleSave}
             disabled={!name || !email || !cpf }
           >

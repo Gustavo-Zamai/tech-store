@@ -8,14 +8,36 @@ import {
   Text,
   Grid,
   GridItem,
-  Spinner
+  Spinner,
+  Dialog,
+  DialogBackdrop,
+  DialogBody,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { MainLayout } from "../../components/Layout/MainLayout";
 import { useCustomers } from "../../hooks/Customer/useClients";
+import { useState } from "react";
 
 export default function CustomersListPage() {
+  const [open, setOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
   const navigate = useNavigate();
+  const handleDeleteClick = (id: number) => {
+    setSelectedId(id);
+    setOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    if (selectedId) {
+      await removeCustomer(selectedId);
+    }
+    setOpen(false);
+  };
+
   const {
     filteredCustomers,
     loading,
@@ -25,19 +47,22 @@ export default function CustomersListPage() {
   } = useCustomers();
 
   return (
-    <MainLayout> 
-      <Box p={8} bgColor="gray.300">
+    <MainLayout>
+      <Box p={8} mb={10} bgColor="gray.100">
         <Heading mb={6}>Clientes</Heading>
 
         <HStack mb={4}>
           <Input
+            border="0.8px solid gray"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar cliente..."
           />
 
           <Button
-            colorScheme="green"
+            bgColor='green'
+            _hover={{ bgColor: 'green.800' }}
+            border="1px solid black"
             onClick={() => navigate("/clientes/novo")}
           >
             + Novo Cliente
@@ -56,18 +81,22 @@ export default function CustomersListPage() {
                 borderWidth="1px"
                 borderRadius="md"
                 alignItems="center"
+                border="0.8px solid gray"
               >
+
                 <GridItem>
                   <Text fontWeight="bold">{customer.name}</Text>
-                  <Text fontSize="sm">{customer.email}</Text>
                   <Text fontSize="sm">{customer.cpf}</Text>
+                  <Text fontSize="sm">{customer.email}</Text>
                 </GridItem>
 
                 <GridItem>
                   <HStack>
                     <Button
                       size="sm"
-                      colorScheme="blue"
+                      bgColor='blue'
+                      _hover={{ bgColor: 'blue.600' }}
+                      border="1px solid black"
                       onClick={() =>
                         navigate(`/clientes/${customer.id}`)
                       }
@@ -77,7 +106,9 @@ export default function CustomersListPage() {
 
                     <Button
                       size="sm"
-                      colorScheme="red"
+                      bgColor='red'
+                      _hover={{ bgColor: 'red.600' }}
+                      border="1px solid black"
                       onClick={() =>
                         removeCustomer(customer.id)
                       }
@@ -91,6 +122,30 @@ export default function CustomersListPage() {
           </VStack>
         )}
       </Box>
+      <Dialog open={open} onOpenChange={(e) => setOpen(e.open)}>
+        <DialogBackdrop />
+        <DialogContent>
+
+          <DialogHeader>
+            <DialogTitle>Excluir cliente</DialogTitle>
+          </DialogHeader>
+
+          <DialogBody>
+            Tem certeza que deseja excluir este cliente?
+          </DialogBody>
+
+          <DialogFooter>
+            <Button onClick={() => setOpen(false)}>
+              Cancelar
+            </Button>
+
+            <Button colorScheme="red" onClick={confirmDelete}>
+              Excluir
+            </Button>
+          </DialogFooter>
+
+        </DialogContent>
+      </Dialog>
     </MainLayout>
   );
 }
