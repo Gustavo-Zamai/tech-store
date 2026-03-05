@@ -10,10 +10,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { MainLayout } from "../../components/Layout/MainLayout";
 import { useCustomer } from "../../hooks/Customer/useClient";
 import { useState, useEffect } from "react";
-import { updateCustomer } from "../../services/Customer/customerService";
 
 export default function EditCustomerPage() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   const { customer, loading, saveCustomer } = useCustomer(Number(id!));
@@ -32,14 +31,19 @@ export default function EditCustomerPage() {
     }
   }, [customer]);
 
+
 const handleUpdate = async () => {
-  await saveCustomer({
+  if (!customer) return;
+
+  const updatedCustomer = {
     id: Number(id),
     name,
     email,
     cpf,
     phone
-  });
+  };
+
+  await saveCustomer(updatedCustomer);
 
   navigate("/clientes");
 };
@@ -55,6 +59,7 @@ const handleUpdate = async () => {
           <Input value={name} onChange={(e) => setName(e.target.value)} />
           <Input value={email} onChange={(e) => setEmail(e.target.value)} />
           <Input value={cpf} onChange={(e) => setCpf(e.target.value)} />
+          <Input value={phone} onChange={(e) => setPhone(e.target.value)} />
 
           <Button colorScheme="blue" onClick={handleUpdate}>
             Atualizar

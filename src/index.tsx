@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+import { AuthProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <ChakraProvider value={defaultSystem}>
-      <App />
-    </ChakraProvider>
-  </React.StrictMode>
+  <AuthProvider>
+    <React.StrictMode>
+      <ChakraProvider value={defaultSystem}>
+        <App />
+      </ChakraProvider>
+    </React.StrictMode>
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

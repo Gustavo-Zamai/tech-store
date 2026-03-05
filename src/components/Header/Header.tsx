@@ -1,13 +1,13 @@
 import { Box, Button, Center, Flex, Image, Text } from "@chakra-ui/react";
 import { HeaderProps } from "../../types/utils";
 import logo from "../../assets/logo.png";
-import avatar from "../../assets/avatar.svg";
 import { useNavigate } from "react-router-dom";
 import { IMenu } from "../Menu/Menu"
 import { useCompany } from "../../hooks/Company/useCompany";
-import { useEmployee } from "../../hooks/Employee/useEmployee";
+import { useAuth } from "../../context/AuthContext";
 
 export const Header = ({ showMenu }: HeaderProps) => {
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const handleLogoutClick = (route: string) => {
@@ -20,9 +20,9 @@ export const Header = ({ showMenu }: HeaderProps) => {
 
   const { company } = useCompany();
 
-  const { employee } = useEmployee(2);
-  
-    // Adicionar mais menus conforme necessário
+  //const { employee } = useEmployee(2);
+
+  // Adicionar mais menus conforme necessário
   const menus = [
     { label: "Geral", route: "/home" },
     { label: "Clientes", route: "/clientes" },
@@ -62,7 +62,7 @@ export const Header = ({ showMenu }: HeaderProps) => {
         <Flex align="center" gap={4}>
           {showMenu && (
             <Image
-              src={employee?.avatar} /**Recebe imagem do usuário*/
+              src={user?.avatar} /**Recebe imagem do usuário*/
               alt="User Avatar"
               w="40px"
               h="40px"
@@ -70,7 +70,7 @@ export const Header = ({ showMenu }: HeaderProps) => {
               marginLeft="1rem"
             />
           )}
-          {showMenu && <Text fontSize="sm">Bem Vindo, {employee?.name}</Text>}{" "}
+          {showMenu && <Text fontSize="sm">Bem Vindo, {user?.name}</Text>}{" "}
           {/* TODO Substituir "User" pelo nome real do usuário logado */}
           {showMenu && (
             <Button

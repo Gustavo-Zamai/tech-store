@@ -12,7 +12,7 @@ export const useCustomer = (id: number) => {
     setLoading(false);
   };
 
-  const saveCustomer = async (id:number, data: Customer) => {
+  const saveCustomer = async (data: Customer) => {
     await updateCustomer(data.id, data);
   };
 
