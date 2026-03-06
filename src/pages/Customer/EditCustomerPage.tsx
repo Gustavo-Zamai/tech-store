@@ -79,7 +79,7 @@ const handleUpdate = async () => {
 
           <Button 
            bgColor="blue"
-           _hover={{bgColor:"blue.700"}}
+           _hover={{bgColor:"blue.500"}}
            border="1px solid black"
            onClick={handleUpdate}>
             Atualizar

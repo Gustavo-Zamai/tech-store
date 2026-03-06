@@ -73,7 +73,7 @@ const handleSave = async () => {
             border="1px solid black"
             borderRadius="10px"
             bgColor="green"
-            _hover={{ bgColor: "green.700" }}
+            _hover={{ bgColor: "green.500" }}
             onClick={handleSave}
             disabled={!name || !email || !cpf }
           >

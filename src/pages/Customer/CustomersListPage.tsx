@@ -8,29 +8,26 @@ import {
   Text,
   Grid,
   GridItem,
-  Spinner,
-  Dialog,
-  DialogBackdrop,
-  DialogBody,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
+  Spinner
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { MainLayout } from "../../components/Layout/MainLayout";
 import { useCustomers } from "../../hooks/Customer/useClients";
 import { useState } from "react";
+import { ConfirmDialog } from "../../components/ConfirmDialog/confirmDialog";
 
 export default function CustomersListPage() {
   const [open, setOpen] = useState(false);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const navigate = useNavigate();
+
+  // abrir modal para confirmação
   const handleDeleteClick = (id: number) => {
     setSelectedId(id);
     setOpen(true);
   };
 
+  // chamado no botão de exclusão
   const confirmDelete = async () => {
     if (selectedId) {
       await removeCustomer(selectedId);
@@ -49,7 +46,7 @@ export default function CustomersListPage() {
   return (
     <MainLayout>
       <Box p={8} mb={10} bgColor="gray.100">
-        <Heading mb={6}>Clientes</Heading>
+        <Heading mb={6} fontWeight="bold">Clientes</Heading>
 
         <HStack mb={4}>
           <Input
@@ -61,7 +58,7 @@ export default function CustomersListPage() {
 
           <Button
             bgColor='green'
-            _hover={{ bgColor: 'green.800' }}
+            _hover={{ bgColor: 'green.500' }}
             border="1px solid black"
             onClick={() => navigate("/clientes/novo")}
           >
@@ -86,8 +83,8 @@ export default function CustomersListPage() {
 
                 <GridItem>
                   <Text fontWeight="bold">{customer.name}</Text>
-                  <Text fontSize="sm">{customer.cpf}</Text>
-                  <Text fontSize="sm">{customer.email}</Text>
+                  <Text fontSize="sm" fontWeight="bold">CPF: {customer.cpf}</Text>
+                  <Text fontSize="sm" fontWeight="bold">E-mail: {customer.email}</Text>
                 </GridItem>
 
                 <GridItem>
@@ -95,7 +92,7 @@ export default function CustomersListPage() {
                     <Button
                       size="sm"
                       bgColor='blue'
-                      _hover={{ bgColor: 'blue.600' }}
+                      _hover={{ bgColor: 'blue.500' }}
                       border="1px solid black"
                       onClick={() =>
                         navigate(`/clientes/${customer.id}`)
@@ -107,10 +104,10 @@ export default function CustomersListPage() {
                     <Button
                       size="sm"
                       bgColor='red'
-                      _hover={{ bgColor: 'red.600' }}
+                      _hover={{ bgColor: 'red.500' }}
                       border="1px solid black"
                       onClick={() =>
-                        removeCustomer(customer.id)
+                        handleDeleteClick(customer.id)
                       }
                     >
                       Excluir
@@ -122,30 +119,13 @@ export default function CustomersListPage() {
           </VStack>
         )}
       </Box>
-      <Dialog open={open} onOpenChange={(e) => setOpen(e.open)}>
-        <DialogBackdrop />
-        <DialogContent>
-
-          <DialogHeader>
-            <DialogTitle>Excluir cliente</DialogTitle>
-          </DialogHeader>
-
-          <DialogBody>
-            Tem certeza que deseja excluir este cliente?
-          </DialogBody>
-
-          <DialogFooter>
-            <Button onClick={() => setOpen(false)}>
-              Cancelar
-            </Button>
-
-            <Button colorScheme="red" onClick={confirmDelete}>
-              Excluir
-            </Button>
-          </DialogFooter>
-
-        </DialogContent>
-      </Dialog>
+      <ConfirmDialog
+        open={open}
+        onOpenChange={setOpen}
+        onConfirm={confirmDelete}
+        title="Excluir cliente"
+        message="Tem certeza que deseja excluir este cliente?"
+      />
     </MainLayout>
   );
 }

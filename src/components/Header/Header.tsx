@@ -7,10 +7,11 @@ import { useCompany } from "../../hooks/Company/useCompany";
 import { useAuth } from "../../context/AuthContext";
 
 export const Header = ({ showMenu }: HeaderProps) => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogoutClick = (route: string) => {
+    logout()
     navigate(route);
   };
 

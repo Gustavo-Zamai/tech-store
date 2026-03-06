@@ -33,7 +33,7 @@
   "customers": [
     {
       "id": "1",
-      "name": "Mariana Sousa",
+      "name": "Mariana Souza",
       "email": "mariana@email.com",
       "cpf": "98765432100",
       "phone": "19888888888"
@@ -54,7 +54,7 @@
     },
     {
       "id": "4",
-      "name": "Lucas Martins editado",
+      "name": "Lucas Martins",
       "email": "lucas@email.com",
       "cpf": "78912345600",
       "phone": "19966666666"
@@ -72,13 +72,6 @@
       "email": "emailteste@email.com",
       "cpf": "123456789000",
       "phone": "199999999999"
-    },
-    {
-      "id": "7",
-      "name": "testando",
-      "email": "teste@gmail.com",
-      "cpf": "123456789000",
-      "phone": "1990987654321"
     }
   ],
   "suppliers": [
@@ -98,33 +91,57 @@
   "products": [
     {
       "id": "1",
-      "name": "Notebook Dell",
-      "price": 3500,
+      "description": "Notebook Dell Inspiron 15",
+      "salePrice": 4200,
+      "purchasePrice": 3500,
+      "amount": 10,
+      "barCode": "789100000001",
       "supplierId": 1
     },
     {
       "id": "2",
-      "name": "Mouse Logitech",
-      "price": 120,
+      "description": "Mouse Gamer Logitech G203",
+      "salePrice": 150,
+      "purchasePrice": 90,
+      "amount": 35,
+      "barCode": "789100000002",
       "supplierId": 2
     },
     {
       "id": "3",
-      "name": "Teclado Mecânico",
-      "price": 280,
+      "description": "Teclado Mecânico Redragon Kumara",
+      "salePrice": 320,
+      "purchasePrice": 210,
+      "amount": 20,
+      "barCode": "789100000003",
       "supplierId": 2
     },
     {
       "id": "4",
-      "name": "Monitor 24",
-      "price": 900,
-      "supplierId": 1
+      "description": "Monitor LG 24 Polegadas",
+      "salePrice": 980,
+      "purchasePrice": 720,
+      "amount": 12,
+      "barCode": "789100000004",
+      "supplierId": 3
     },
     {
       "id": "5",
-      "name": "Headset Gamer",
-      "price": 350,
-      "supplierId": 2
+      "description": "SSD Kingston 480GB",
+      "salePrice": 280,
+      "purchasePrice": 190,
+      "amount": 40,
+      "barCode": "789100000005",
+      "supplierId": 1
+    },
+    {
+      "id": "242f",
+      "description": "teste",
+      "salePrice": 129.92,
+      "purchasePrice": 75,
+      "amount": 100,
+      "barCode": "1234567890123",
+      "supplierId": 3
     }
   ],
   "sales": [

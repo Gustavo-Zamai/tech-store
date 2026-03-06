@@ -1,5 +1,9 @@
 export interface Product {
   id: number;
-  name: string;
-  price: number;
+  description: string;
+  salePrice: number;
+  purchasePrice: number;
+  amount: number;
+  barCode: string;
+  supplierId: number;
 }

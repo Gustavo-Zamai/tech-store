@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Center } from "@chakra-ui/react";
 import { InputCard } from "../Input/Input";
 import { IButton } from "../Button/Button";
-import { login } from "../../services/Login/login";
+import { login as loginService } from "../../services/Login/login";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
@@ -12,18 +12,20 @@ export const LoginCard = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  const { setUser } = useAuth();
+  const { login } = useAuth();
 
   const handleLogin = async () => {
-  try {
-    const user = await login(email, password);
-    
-    setUser(user)
-    navigate("/home");
-  } catch (error) {
-    alert("Email ou senha inválidos");
-  }
-};
+    try {
+      const user = await loginService(email, password);
+
+      login(user);
+
+      navigate("/home");
+
+    } catch (error) {
+      alert("Email ou senha inválidos");
+    }
+  };
 
   return (
     <Center>
