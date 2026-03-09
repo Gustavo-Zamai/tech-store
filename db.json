@@ -94,7 +94,7 @@
       "description": "Notebook Dell Inspiron 15",
       "salePrice": 4200,
       "purchasePrice": 3500,
-      "amount": 10,
+      "amount": 15,
       "barCode": "789100000001",
       "supplierId": 1
     },
@@ -110,9 +110,9 @@
     {
       "id": "3",
       "description": "Teclado Mecânico Redragon Kumara",
-      "salePrice": 320,
-      "purchasePrice": 210,
-      "amount": 20,
+      "salePrice": 250.25,
+      "purchasePrice": 205,
+      "amount": 15,
       "barCode": "789100000003",
       "supplierId": 2
     },
@@ -141,6 +141,159 @@
       "purchasePrice": 75,
       "amount": 100,
       "barCode": "1234567890123",
+      "supplierId": 3
+    },
+    {
+      "id": "6",
+      "description": "Headset HyperX Cloud Stinger",
+      "salePrice": 299.9,
+      "purchasePrice": 210,
+      "amount": 18,
+      "barCode": "789100000006",
+      "supplierId": 1
+    },
+    {
+      "id": "7",
+      "description": "Webcam Logitech C920",
+      "salePrice": 450,
+      "purchasePrice": 320,
+      "amount": 10,
+      "barCode": "789100000007",
+      "supplierId": 2
+    },
+    {
+      "id": "8",
+      "description": "HD Externo Seagate 1TB",
+      "salePrice": 420,
+      "purchasePrice": 310,
+      "amount": 22,
+      "barCode": "789100000008",
+      "supplierId": 3
+    },
+    {
+      "id": "9",
+      "description": "Memória RAM DDR4 16GB Kingston",
+      "salePrice": 380,
+      "purchasePrice": 270,
+      "amount": 30,
+      "barCode": "789100000009",
+      "supplierId": 1
+    },
+    {
+      "id": "10",
+      "description": "Placa de Vídeo RTX 4060",
+      "salePrice": 2800,
+      "purchasePrice": 2400,
+      "amount": 8,
+      "barCode": "789100000010",
+      "supplierId": 2
+    },
+    {
+      "id": "11",
+      "description": "Processador Intel i5 12400F",
+      "salePrice": 1100,
+      "purchasePrice": 890,
+      "amount": 12,
+      "barCode": "789100000011",
+      "supplierId": 1
+    },
+    {
+      "id": "12",
+      "description": "Processador Ryzen 5 5600",
+      "salePrice": 1050,
+      "purchasePrice": 870,
+      "amount": 14,
+      "barCode": "789100000012",
+      "supplierId": 3
+    },
+    {
+      "id": "13",
+      "description": "Fonte Corsair 650W",
+      "salePrice": 520,
+      "purchasePrice": 380,
+      "amount": 16,
+      "barCode": "789100000013",
+      "supplierId": 2
+    },
+    {
+      "id": "14",
+      "description": "Gabinete Gamer RGB",
+      "salePrice": 420,
+      "purchasePrice": 300,
+      "amount": 11,
+      "barCode": "789100000014",
+      "supplierId": 1
+    },
+    {
+      "id": "15",
+      "description": "Mousepad Gamer Grande",
+      "salePrice": 89.9,
+      "purchasePrice": 45,
+      "amount": 60,
+      "barCode": "789100000015",
+      "supplierId": 2
+    },
+    {
+      "id": "16",
+      "description": "Notebook Lenovo IdeaPad 3",
+      "salePrice": 3900,
+      "purchasePrice": 3200,
+      "amount": 9,
+      "barCode": "789100000016",
+      "supplierId": 3
+    },
+    {
+      "id": "17",
+      "description": "Monitor Samsung 27 Polegadas",
+      "salePrice": 1250,
+      "purchasePrice": 960,
+      "amount": 7,
+      "barCode": "789100000017",
+      "supplierId": 2
+    },
+    {
+      "id": "18",
+      "description": "SSD NVMe 1TB Kingston",
+      "salePrice": 560,
+      "purchasePrice": 410,
+      "amount": 25,
+      "barCode": "789100000018",
+      "supplierId": 1
+    },
+    {
+      "id": "19",
+      "description": "Teclado Logitech K120",
+      "salePrice": 95,
+      "purchasePrice": 55,
+      "amount": 45,
+      "barCode": "789100000019",
+      "supplierId": 2
+    },
+    {
+      "id": "20",
+      "description": "Mouse Sem Fio Logitech M170",
+      "salePrice": 110,
+      "purchasePrice": 70,
+      "amount": 38,
+      "barCode": "789100000020",
+      "supplierId": 3
+    },
+    {
+      "id": "21",
+      "description": "Cadeira Gamer Ergonomica",
+      "salePrice": 950,
+      "purchasePrice": 700,
+      "amount": 6,
+      "barCode": "789100000021",
+      "supplierId": 1
+    },
+    {
+      "id": "22",
+      "description": "Tablet Samsung Galaxy Tab A",
+      "salePrice": 1350,
+      "purchasePrice": 1100,
+      "amount": 10,
+      "barCode": "789100000022",
       "supplierId": 3
     }
   ],
