@@ -1,28 +1,34 @@
 import { useEffect, useState } from "react";
-import { getEmployeeById, updateEmployee } from "../../services/Employee/employeeService";
+import { getEmployeeById, updateEmployee, getEmployeeByName } from "../../services/Employee/employeeService";
 import { Employee } from "../../types/employee";
 
 export const useEmployee = (id: number) => {
-  const [employee, setEmplpoyee] = useState<Employee | null>(null);
+  const [employee, setEmployee] = useState<Employee | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchCustomer = async () => {
+  const fetchEmployee = async () => {
     const data = await getEmployeeById(id);
-    setEmplpoyee(data);
+    setEmployee(data);
     setLoading(false);
   };
 
-  const saveCustomer = async (): Promise<Employee | any> => {
-    await updateEmployee(id);
+  /*const fetchEmployeeByName = async () => {
+    const data = await getEmployeeByName(name);
+    setEmployee(data);
+    setLoading(false);
+  };*/
+
+  const saveEmployee = async (data: Employee) => {
+    await updateEmployee(data.id, data);
   };
 
   useEffect(() => {
-    fetchCustomer();
+    fetchEmployee();
   }, [id]);
 
   return {
     employee,
     loading,
-    saveCustomer
+    saveEmployee
   };
 };

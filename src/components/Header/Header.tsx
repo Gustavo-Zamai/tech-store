@@ -25,12 +25,13 @@ export const Header = ({ showMenu }: HeaderProps) => {
 
   // Adicionar mais menus conforme necessário
   const menus = [
-    { label: "Geral", route: "/home" },
+    { label: "Geral", route: "/company" },
+    { label: "Funcionários", route: "/funcionarios" },
     { label: "Clientes", route: "/clientes" },
-    { label: "Produtos", route: "/produtos" },
     { label: "Fornecedores", route: "/fornecedores"},
-    { label: "Estoque", route: "/estoque"},
+    { label: "Produtos", route: "/produtos" },
     { label: "Categorias", route: "/categorias"},
+    { label: "Estoque", route: "/estoque"},
     { label: "Vendas", route: "/vendas"},
     { label: "Relatórios", route: "/relatorios"}
   ];
@@ -61,16 +62,6 @@ export const Header = ({ showMenu }: HeaderProps) => {
         </Center>
         {/* Faixa do Menu com avatar, saudação e botão de logout */}
         <Flex align="center" gap={4}>
-          {showMenu && (
-            <Image
-              src={user?.avatar} /**Recebe imagem do usuário*/
-              alt="User Avatar"
-              w="40px"
-              h="40px"
-              borderRadius="50%"
-              marginLeft="1rem"
-            />
-          )}
           {showMenu && <Text fontSize="sm">Bem Vindo, {user?.name}</Text>}{" "}
           {/* TODO Substituir "User" pelo nome real do usuário logado */}
           {showMenu && (

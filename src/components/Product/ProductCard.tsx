@@ -32,10 +32,10 @@ export function ProductCard({ product, onDelete }: ProductCardProps) {
       
       <GridItem>
         <Text fontWeight="bold">{product.description}</Text>
-        <Text fontSize="sm" fontWeight="bold">
+        <Text fontSize="sm">
           Preço R$: {product.salePrice.toFixed(2)}
         </Text>
-        <Text fontSize="sm" fontWeight="bold">
+        <Text fontSize="sm">
           Estoque: {product.amount}
         </Text>
       </GridItem>

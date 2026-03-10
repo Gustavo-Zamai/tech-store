@@ -11,12 +11,19 @@ export const getEmployeeById = async (id: number): Promise<Employee> => {
   return response.data;
 };
 
-export const createEmployee = async (data: Employee) => {
-  return api.post("/employees", data);
+export const getEmployeeByName = async (name: string): Promise<Employee> => {
+  const response = await api.get(`/employees/${name}`);
+  return response.data;
 };
 
-export const updateEmployee = async (id: number) => {
-  return api.put(`/employees/${id}`);
+export const createEmployee = async (data: Employee) => {
+  const response = await api.post("/employees", data);
+  return response.data;
+};
+
+export const updateEmployee = async (id: number, data: Employee) => {
+  const response = await api.put(`/employees/${data.id}`, data);
+  return response.data
 };
 
 export const deleteEmployee = async (id: number) => {

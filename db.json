@@ -92,7 +92,7 @@
     {
       "id": "1",
       "description": "Notebook Dell Inspiron 15",
-      "salePrice": 4200,
+      "salePrice": 4200.5,
       "purchasePrice": 3500,
       "amount": 15,
       "barCode": "789100000001",
